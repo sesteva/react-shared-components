@@ -26,7 +26,7 @@ Now navigate to [http://localhost:8080/](http://localhost:8080/)
 To run Android, first start an android emulator (or connect your phone with [USB debugging enabled](http://developer.android.com/tools/device.html)), then run the following commands :
 
     react-native run-android
-    npm rstart
+    npm start
 
 ## iOS  
 
