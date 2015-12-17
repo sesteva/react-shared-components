@@ -9,15 +9,15 @@ Make sure you have [Node JS](https://nodejs.org/en/) 4.0.0 or higher installed.
 
 ## Install
 
-  npm install -g webpack-dev-server
-  npm install -g react-native react-native-cli
-  npm install
+    npm install -g webpack-dev-server
+    npm install -g react-native react-native-cli
+    npm install
 
 ## Web
 
 To run the web example, first run the following commands :
 
-  npm run start-web
+    npm run start-web
 
 Now navigate to [http://localhost:8080/](http://localhost:8080/)
 
@@ -25,8 +25,8 @@ Now navigate to [http://localhost:8080/](http://localhost:8080/)
 
 To run Android, first start an android emulator (or connect your phone with [USB debugging enabled](http://developer.android.com/tools/device.html)), then run the following commands :
 
-  react-native run-android
-  npm rstart
+    react-native run-android
+    npm rstart
 
 ## iOS  
 
@@ -34,21 +34,21 @@ To run iOS, open up [`ios/SampleApp.xcodeproj`](ios/SampleApp.xcodeproj) in XCod
 
 ## App Structure
 
-- android/ -----> native shell
-- ios/     -----> native shell
-- web/     -----> web shell
-- src/     -----> insert your code here!
+    - android/ -----> native shell
+    - ios/     -----> native shell
+    - web/     -----> web shell
+    - src/     -----> insert your code here!
 
 ### SRC folder
 
-- actions/      -----> Shared across  
-- constants/    -----> Shared across
-- dispatcher/   -----> Shared across
-- stores/       -----> Shared across
-- components/
-- index.android.js
-- index.ios.js
-- index.web.js
+    - actions/      -----> Shared across  
+    - constants/    -----> Shared across
+    - dispatcher/   -----> Shared across
+    - stores/       -----> Shared across
+    - components/
+    - index.android.js
+    - index.ios.js
+    - index.web.js
 
 ### index files
 
@@ -60,15 +60,15 @@ React + WebPack will take index.web.js as entry point for our Web js bundle.
 
 ### Components
 
-- components
-  - MyComponent
-    - MyComponent.native.js
-    - MyComponent.web.js
-    - MyComponentLogic.js
-    - MyComponentRender.android.js
-    - MyComponentRender.ios.js
-    - MyComponentRender.native.js
-    - MyComponentRender.web.js
+    - components
+      - MyComponent
+        - MyComponent.native.js
+        - MyComponent.web.js
+        - MyComponentLogic.js
+        - MyComponentRender.android.js
+        - MyComponentRender.ios.js
+        - MyComponentRender.native.js
+        - MyComponentRender.web.js
 
 #### Concepts:
 
@@ -96,10 +96,10 @@ MyComponentLogic is where the shared logic lives. Both native and web components
 
 #### Render
 
-- MyComponentRender.android.js
-- MyComponentRender.ios.js
-- MyComponentRender.native.js
-- MyComponentRender.web.js
+    - MyComponentRender.android.js
+    - MyComponentRender.ios.js
+    - MyComponentRender.native.js
+    - MyComponentRender.web.js
 
 '.android' and '.ios' will be the ones react-native will look for. In the absence it will look for '.js'.
 
