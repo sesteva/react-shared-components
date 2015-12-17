@@ -50,7 +50,7 @@ To run iOS, open up [`ios/SampleApp.xcodeproj`](ios/SampleApp.xcodeproj) in XCod
     - index.ios.js
     - index.web.js
 
-### index files
+### Entry Points (index.*.js)
 
 Following React-Native naming convention, we extend it by adding '.web' as indicator for web platform related files.
 
@@ -72,7 +72,7 @@ React + WebPack will take index.web.js as entry point for our Web js bundle.
 
 #### Concepts:
 
- - Generic omponent
+ - Generic Component
  - Logic
  - Render
 
