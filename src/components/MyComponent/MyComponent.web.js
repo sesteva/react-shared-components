@@ -3,11 +3,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import WebRender from './MyComponentRender.web';
+import Render from './MyComponentRender.web';
 import Logic from './MyComponentLogic';
 
-let Base = Logic(React);
-// let Render = new WebRender();
+let MyInnerComponent = Logic(React,Render);
 
 export default class MyComponent extends Component {
 
@@ -17,7 +16,7 @@ export default class MyComponent extends Component {
 
   render() {
     return (
-      <Base view={WebRender} />
+      <MyInnerComponent />
     );
   }
 

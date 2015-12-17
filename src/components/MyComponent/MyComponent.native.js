@@ -6,11 +6,10 @@ import React, {
   StyleSheet
 } from 'react-native';
 
-import NativeRender from './MyComponentRender';
+import Render from './MyComponentRender';
 import Logic from './MyComponentLogic';
 
-let Base = Logic(React);
-let Render = new NativeRender();
+let MyInnerComponent = Logic(React,Render());
 
 export default class MyComponent extends Component {
 
@@ -21,7 +20,7 @@ export default class MyComponent extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Base view={Render} />
+        <MyInnerComponent />
       </View>
     );
   }

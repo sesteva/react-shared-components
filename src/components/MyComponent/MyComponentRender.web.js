@@ -1,6 +1,6 @@
 import React from 'react';
 
-var NameViewWeb = ({ value, errors, sync, onValueChange }) => {
+const Render = ({ value, errors, sync, onValueChange }) => {
   var errorNodes = errors.map((err, i) =>
     <p className="help-block" key={i}>{err}</p>
   );
@@ -31,4 +31,4 @@ var NameViewWeb = ({ value, errors, sync, onValueChange }) => {
   </div>);
 };
 
-export default NameViewWeb;
+export default Render;
