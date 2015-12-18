@@ -62,13 +62,13 @@ React + WebPack will take index.web.js as entry point for our Web js bundle.
 
     - components
       - MyComponent
-        - MyComponent.native.js
-        - MyComponent.web.js
-        - MyComponentLogic.js
-        - MyComponentRender.android.js
-        - MyComponentRender.ios.js
-        - MyComponentRender.native.js
-        - MyComponentRender.web.js
+        - MyComponent.native.js              -----> Until react and react-dom is fully separated
+        - MyComponent.web.js                 -----> Until react and react-dom is fully separated
+        - MyComponentLogic.js                -----> Shared across
+        - MyComponentRender.android.js       -----> Android Specific Render
+        - MyComponentRender.ios.js           -----> iOS Specific Render
+        - MyComponentRender.native.js        -----> Android/iOS Sahred Render
+        - MyComponentRender.web.js           -----> Web Specific Render
 
 #### Concepts:
 
@@ -96,10 +96,10 @@ MyComponentLogic is where the shared logic lives. Both native and web components
 
 #### Render
 
-    - MyComponentRender.android.js
-    - MyComponentRender.ios.js
-    - MyComponentRender.native.js
-    - MyComponentRender.web.js
+    - MyComponentRender.android.js       -----> Android Specific Render
+    - MyComponentRender.ios.js           -----> iOS Specific Render
+    - MyComponentRender.native.js        -----> Android/iOS Sahred Render
+    - MyComponentRender.web.js           -----> Web Specific Render
 
 '.android' and '.ios' will be the ones react-native will look for. In the absence it will look for '.js'.
 
