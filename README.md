@@ -2,6 +2,10 @@
 
 The concept executed is 99.9% inspired and based on [Sharing components between React and React Native](https://medium.com/@aakashns/sharing-components-between-react-and-react-native-f6ce3713658a) and [A mobile, desktop and website App with the same code](http://blog.benoitvallon.com/projects/a-mobile-desktop-and-website-app-with-the-same-code/)
 
+React Forum Discussion on this topic [here](https://discuss.reactjs.org/t/share-code-component-react-and-react-native/2734/3)
+
+StackOverFlow Discussion on this topic [here](http://stackoverflow.com/questions/34318308/share-component-logic-between-react-and-react-native/34362552#34362552)
+
 Running the code
 ----------------
 
