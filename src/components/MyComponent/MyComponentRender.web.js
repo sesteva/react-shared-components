@@ -14,13 +14,7 @@ const Render = ({ value, errors, sync, onValueChange }) => {
       {sync ? "Synced!" : "Syncing..."}
     </p>);
 
-  var wrapperStyle = {
-    width: 750,
-    padding: 250,
-    border: '1px solid black'
-  };
-
-  return (<div className={status} style={wrapperStyle}>
+  return (<div className={status}>
     <label>Name : </label>
     <input type="text"
       className="form-control"
