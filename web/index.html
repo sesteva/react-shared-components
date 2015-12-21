@@ -1,13 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>React Example</title>
-    <link rel="stylesheet" type="text/css"
-      href="styles/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8">
+    <title>React Web App Shell</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta id="theme-color" name="theme-color" content="#4527A0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/images/chrome-touch-icon-192x192.png" sizes="192x192" type="image/png">
   </head>
   <body>
     <div id="app"></div>
-    <script type="text/javascript" src="bundle.js"></script>
+    <script>
+    var remoteStyles = [
+      'styles/bootstrap.min.css'
+      // 'https://fonts.googleapis.com/css?family=Roboto:400,300,700',
+      // '/css/spark.light.css'
+    ];
+
+    // Asynchronously load CSS with a Request Animation Frame
+    // For older browser support see this for a simple shim
+    // http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+    window.requestAnimationFrame(function() {
+      var elementToInsertLinkBefore =
+        document.getElementsByTagName('script')[0];
+      for (var i = 0; i < remoteStyles.length; i++) {
+        var linkElement = document.createElement('link');
+        linkElement.rel = 'stylesheet';
+        linkElement.media = 'all';
+        linkElement.href = remoteStyles[i];
+
+        elementToInsertLinkBefore.parentNode.insertBefore(linkElement,
+          elementToInsertLinkBefore);
+      }
+    });
+    function   loadCSS(url) {
+      return new Promise((resolve, reject) => {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.responseType = 'text';
+        xhr.onload = function(e) {
+          if (this.status === 200) {
+            var style = document.createElement('style');
+            style.textContent = xhr.response;
+            document.head.appendChild(style);
+            resolve();
+          } else {
+            reject();
+          }
+        };
+        xhr.send();
+      });
+    }
+    function loadScript(url) {
+      return new Promise((resolve, reject) => {
+        var script = document.createElement('script');
+        script.async = false;
+        script.src = url;
+
+        script.onload = resolve;
+        script.onerror = reject;
+
+        document.head.appendChild(script);
+      });
+    }
+    loadScript('bundle.js').then(function(){
+      console.log('loaded app');
+    });
+
+
+  </script>
   </body>
 </html>
