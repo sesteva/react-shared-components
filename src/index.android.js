@@ -4,13 +4,11 @@ import React, {
   StyleSheet,
   Text,
   DrawerLayoutAndroid,
-  TouchableHighlight,
   Navigator,
   View
 } from 'react-native';
 
 import ToolbarAndroid from 'ToolbarAndroid';
-import SampleView from './components/MyComponent/MyComponent.native';
 import MainPage from './components/MainPage/MainPage.native';
 
 class SampleApp extends Component {

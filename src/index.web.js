@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SampleComponent from './components/MyComponent/MyComponent.web';
-import Profile from './components/Profile/Profile.web';
+import MainPage from './components/MainPage/MainPage.web';
+
 
 let app = document.getElementById('app')
 
@@ -15,8 +15,7 @@ class SampleApp extends React.Component {
   render(){
     return (
       <div className="container">
-        <Profile/>
-        <SampleComponent/>
+        <MainPage />
       </div>
     )
   }
