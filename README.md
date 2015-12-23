@@ -1,3 +1,8 @@
+# Warning
+
+This is a WIP being tested and developed only on Android and Browsers.
+iOS will be part of the scope soon...
+
 # react-sharing-components
 
 The concept executed is 99.9% inspired and based on [Sharing components between React and React Native](https://medium.com/@aakashns/sharing-components-between-react-and-react-native-f6ce3713658a) and [A mobile, desktop and website App with the same code](http://blog.benoitvallon.com/projects/a-mobile-desktop-and-website-app-with-the-same-code/)
@@ -46,9 +51,9 @@ To run iOS, open up [`ios/SampleApp.xcodeproj`](ios/SampleApp.xcodeproj) in XCod
 ### SRC folder
 
     - actions/      -----> Shared across  
-    - constants/    -----> Shared across
-    - dispatcher/   -----> Shared across
-    - stores/       -----> Shared across
+    - constants/    -----> Shared across    
+    - reducers/     -----> Shared across
+    - containers/   
     - components/
     - index.android.js
     - index.ios.js
@@ -112,3 +117,8 @@ We have purposely avoided leaving '.js' files since it could be confusing if the
 Instead, we enforce the use of '.web' as a convention.
 
 What if you still want to have a common Render for ios and android. In that case, we delegate to a common file with '.native' extension.
+
+
+### containers
+
+...
