@@ -1,9 +1,6 @@
 import React from 'react';
 
-const Render = ({ username, errors }) => {
-  var errorNodes = errors.map((err, i) =>
-    <p className="help-block" key={i}>{err}</p>
-  );
+const Render = ({ profile }) => {
 
   return (
     <div style={styles.wrapper}>
@@ -11,14 +8,11 @@ const Render = ({ username, errors }) => {
         <span>Avatar</span>
       </div>
       <div style={styles.username}>
-        <span>{username}</span>
+        <span>{profile.username}</span>
       </div>
       <div style={styles.misc}>
         <span>Something Else</span>
-      </div>
-      <div style={styles.msg}>
-         {errorNodes}
-      </div>
+      </div>      
     </div>
   );
 };

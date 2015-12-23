@@ -2,12 +2,12 @@ import React from 'react';
 import Profile from '../Profile/Profile.web';
 
 
-const Render = ({ props }) => {
+const Render = ({ profile, actions }) => {
 
   return (
     <div style={styles.parent}>
       <div style={styles.topBlock}>
-        <Profile />
+        <Profile profile={profile}/>
       </div>
       <div style={styles.bottomBlock}>
         <div style={styles.cellFour}>

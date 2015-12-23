@@ -1,24 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import MainPage from './components/MainPage/MainPage.web';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
+import * as reducers from './reducers';
+import App from './containers/App.web';
 
-let app = document.getElementById('app')
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const reducer = combineReducers(reducers);
+const store = createStoreWithMiddleware(reducer);
 
-class SampleApp extends React.Component {
-
-  constructor(props){
-    super(props);
-  }
-
-  render(){
-    return (
-      <div className="container">
-        <MainPage />
-      </div>
-    )
-  }
-}
-
-ReactDOM.render(<SampleApp />, app);
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+);

@@ -1,10 +1,8 @@
 'use strict';
 
 import React, {
-  View,
   Component,
-  PropTypes,
-  StyleSheet
+  PropTypes
 } from 'react-native';
 
 import Render from './MainPageRender';

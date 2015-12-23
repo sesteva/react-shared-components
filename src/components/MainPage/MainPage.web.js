@@ -1,6 +1,9 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, {
+  Component,
+  PropTypes
+} from 'react';
 import ReactDOM from 'react-dom';
 
 import Render from './MainPageRender.web';
@@ -8,7 +11,7 @@ import Logic from './MainPageLogic';
 
 let MyInnerComponent = Logic(React,Render);
 
-export default class MainPage extends Component {
+class MainPage extends Component {
 
   constructor(props) {
     super(props);
@@ -16,8 +19,15 @@ export default class MainPage extends Component {
 
   render() {
     return (
-      <MyInnerComponent />
+      <MyInnerComponent {...this.props}/>
     );
   }
 
 }
+
+MainPage.propTypes = {
+  profile: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
+}
+
+export default MainPage;
