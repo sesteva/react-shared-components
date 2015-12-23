@@ -7,8 +7,8 @@ export default (React,InnerComponent) => class extends React.Component {
     this.state = { value: "", errors: [], sync: true };
     // Bind callback methods to make `this` the correct context.
     this.validate = this.validate.bind(this);
-    this.syncToServer = this.syncToServer.bind(this);
     this.onValueChange = this.onValueChange.bind(this);
+    this.onValueSubmit = this.onValueSubmit.bind(this);
   }
 
   validate(value) {
@@ -19,28 +19,24 @@ export default (React,InnerComponent) => class extends React.Component {
     return validations.map(f => f(value)).filter(e => e !== true);
   }
 
-  syncToServer() {
-    // Using a timeout to simulate a server call
-    clearTimeout(this._syncRequest);
-    this._syncRequest = setTimeout(() => {
-      var newState = this.state;
-      newState.sync = true;
-      this.setState(newState);
-    }, 2000);
-  }
-
   onValueChange(value) {
     this.setState({
       value: value,
       errors: this.validate(value),
       sync: false
     });
-    // this.syncToServer();
+  }
+
+  onValueSubmit() {
+    this.props.onSubmit(this.state.value);
+    this.setState({
+      value: ''
+    });
   }
 
   render(){
     return <InnerComponent
-      onSubmit={this.props.onSubmit}
+      onValueSubmit={this.onValueSubmit}
       onValueChange={this.onValueChange}
       {...this.state}
       {...this.props} />

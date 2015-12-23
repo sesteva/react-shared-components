@@ -15,7 +15,7 @@ import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux/native';
 import ToolbarAndroid from 'ToolbarAndroid';
 import MainPage from '../components/MainPage/MainPage.native';
-import * as mainPageActions from '../actions/MainPageActions';
+import * as profileActions from '../actions/ProfileActions';
 
 class App extends Component {
 
@@ -125,7 +125,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(mainPageActions, dispatch)
+    actions: bindActionCreators(profileActions, dispatch)
   }
 }
 

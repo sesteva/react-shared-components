@@ -16,7 +16,7 @@ export default class NativeRender extends Component {
   }
 
   render() {
-    var { value, errors, sync, onValueChange, onSubmit } = this.props;
+    var { value, errors, sync, onValueChange, onValueSubmit } = this.props;
     var errorNodes = errors.map((e, i) =>
       <Text key={i} style={styles.error}>{e}</Text>);
     var syncNode = (value !== "") &&
@@ -31,7 +31,7 @@ export default class NativeRender extends Component {
           ref="input"
           onChangeText={onValueChange}
           style={styles.input}/>
-        <TouchableHighlight onPress={() => onSubmit(value)} >
+        <TouchableHighlight onPress={onValueSubmit} >
           <Text>Submit</Text>
         </TouchableHighlight>
         {errorNodes}
