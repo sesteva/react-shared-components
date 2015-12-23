@@ -8,9 +8,12 @@
     "start-android": "react-native run-android"
   },
   "dependencies": {
-    "react-native": "^0.13.2",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "react-native": "^0.13.2",
+    "react-redux": "^3.1.2",
+    "redux": "^3.0.5",
+    "redux-thunk": "^1.0.2"
   },
   "devDependencies": {
     "babel-core": "^5.8.30",

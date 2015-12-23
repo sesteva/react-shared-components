@@ -9,6 +9,7 @@ import React, {
 } from 'react-native';
 
 import Profile from '../Profile/Profile.native';
+import Input from '../MyComponent/MyComponent.native';
 
 export default class NativeRender extends Component {
 
@@ -17,17 +18,20 @@ export default class NativeRender extends Component {
   }
 
   render() {
+    const { profile, actions } = this.props;
+
     return (
       <View style={styles.parent}>
         <View style={styles.topBlock}>
-          <Profile />
+          <Profile profile={profile}/>
         </View>
         <View style={styles.bottomBlock}>
           <View style={[styles.cellFour, styles.base]}>
             <Text style={styles.cellId}>4</Text>
           </View>
           <View style={[styles.cellFive, styles.base]}>
-            <Text style={styles.cellId}>5</Text>
+            <Text>Update Profile</Text>
+            <Input onSubmit={actions.updateProfile}/>
           </View>
           <View style={styles.bottomRight}>
             <View style={[styles.cellSix, styles.base]}>
@@ -57,7 +61,7 @@ var styles = StyleSheet.create({
     borderColor: '#000000',
     borderWidth: 5,
     alignItems: 'center',
-    justifyContent: 'center', 
+    justifyContent: 'center',
   },
   topBlock: {
     flexDirection: 'row',

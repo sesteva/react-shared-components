@@ -5,7 +5,8 @@ import React, {
   Text,
   TextInput,
   Component,
-  StyleSheet
+  StyleSheet,
+  TouchableHighlight
 } from 'react-native';
 
 export default class NativeRender extends Component {
@@ -15,7 +16,7 @@ export default class NativeRender extends Component {
   }
 
   render() {
-    var { value, errors, sync, onValueChange } = this.props;
+    var { value, errors, sync, onValueChange, onSubmit } = this.props;
     var errorNodes = errors.map((e, i) =>
       <Text key={i} style={styles.error}>{e}</Text>);
     var syncNode = (value !== "") &&
@@ -27,8 +28,12 @@ export default class NativeRender extends Component {
       <View style={styles.wrapper}>
         <Text style={styles.label}>Name</Text>
         <TextInput value={value}
-          style={styles.input}
-          onChangeText={onValueChange} />
+          ref="input"
+          onChangeText={onValueChange}
+          style={styles.input}/>
+        <TouchableHighlight onPress={() => onSubmit(value)} >
+          <Text>Submit</Text>
+        </TouchableHighlight>
         {errorNodes}
         {syncNode}
       </View>

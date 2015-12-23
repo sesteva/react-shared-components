@@ -20,7 +20,7 @@ export default class MyComponent extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <MyInnerComponent />
+        <MyInnerComponent {...this.props}/>
       </View>
     );
   }

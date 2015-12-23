@@ -3,11 +3,7 @@
 export default (React,InnerComponent) => class extends React.Component {
 
   constructor(props) {
-    super(props);
-    this.state = {
-      username: "my username",
-      errors: []
-    };
+    super(props);    
   }
 
   render(){

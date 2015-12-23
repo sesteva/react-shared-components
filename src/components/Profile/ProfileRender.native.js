@@ -15,9 +15,7 @@ export default class NativeRender extends Component {
   }
 
   render() {
-    var { username, errors } = this.props;
-    var errorNodes = errors.map((e, i) =>
-      <Text key={i} style={styles.error}>{e}</Text>);
+    var { profile } = this.props;
 
     return (
       <View style={styles.wrapper}>
@@ -25,13 +23,10 @@ export default class NativeRender extends Component {
           <Text>Avatar</Text>
         </View>
         <View style={styles.username}>
-          <Text>{username}</Text>
+          <Text>{profile.username}</Text>
         </View>
         <View style={styles.misc}>
           <Text>Something Else</Text>
-        </View>
-        <View style={styles.msg}>
-           {errorNodes}
         </View>
       </View>
     );

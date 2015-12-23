@@ -35,11 +35,12 @@ export default (React,InnerComponent) => class extends React.Component {
       errors: this.validate(value),
       sync: false
     });
-    this.syncToServer();
+    // this.syncToServer();
   }
 
   render(){
     return <InnerComponent
+      onSubmit={this.props.onSubmit}
       onValueChange={this.onValueChange}
       {...this.state}
       {...this.props} />
