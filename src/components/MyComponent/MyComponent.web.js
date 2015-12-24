@@ -16,7 +16,7 @@ export default class MyComponent extends Component {
 
   render() {
     return (
-      <MyInnerComponent />
+      <MyInnerComponent {...this.props}/>
     );
   }
 

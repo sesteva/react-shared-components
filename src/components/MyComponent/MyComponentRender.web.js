@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Render = ({ value, errors, sync, onValueChange }) => {
+const Render = ({ value, errors, sync, onValueChange, onValueSubmit }) => {
+
   var errorNodes = errors.map((err, i) =>
     <p className="help-block" key={i}>{err}</p>
   );
@@ -20,7 +21,9 @@ const Render = ({ value, errors, sync, onValueChange }) => {
       className="form-control"
       value={value}
       onChange={e => onValueChange(e.target.value)} />
-    {errorNodes}
+    <button onClick={onValueSubmit} >
+        <span>Submit</span>
+    </button>
     {syncBlock}
   </div>);
 };

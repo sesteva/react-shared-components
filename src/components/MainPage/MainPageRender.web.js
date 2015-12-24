@@ -1,5 +1,6 @@
 import React from 'react';
 import Profile from '../Profile/Profile.web';
+import Input from '../MyComponent/MyComponent.web';
 
 
 const Render = ({ profile, actions }) => {
@@ -14,6 +15,8 @@ const Render = ({ profile, actions }) => {
           <span style={styles.cellId}>4</span>
         </div>
         <div style={styles.cellFive}>
+          <div>Update Profile</div>
+          <Input onSubmit={actions.updateProfile}/>
           <span style={styles.cellId}>5</span>
         </div>
         <div style={styles.bottomRight}>
