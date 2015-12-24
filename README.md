@@ -53,7 +53,6 @@ To run iOS, open up [`ios/SampleApp.xcodeproj`](ios/SampleApp.xcodeproj) in XCod
     - actions/      -----> Shared across  
     - constants/    -----> Shared across    
     - reducers/     -----> Shared across
-    - containers/   
     - components/
     - index.android.js
     - index.ios.js
@@ -119,6 +118,10 @@ Instead, we enforce the use of '.web' as a convention.
 What if you still want to have a common Render for ios and android. In that case, we delegate to a common file with '.native' extension.
 
 
-### containers
+### Containers
 
-...
+Redux is traditionally followed by separation of Container (logic) and Presentational components.
+
+On the web you will find Redux examples including a containers folder.
+
+This project follows the same concept but keeps all parts in the same component folder.

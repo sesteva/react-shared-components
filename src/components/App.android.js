@@ -14,7 +14,7 @@ import React, {
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux/native';
 import ToolbarAndroid from 'ToolbarAndroid';
-import MainPage from '../components/MainPage/MainPage.native';
+import MainPage from './MainPage/MainPage.native';
 import * as profileActions from '../actions/ProfileActions';
 
 class App extends Component {

@@ -6,12 +6,12 @@ import React, {
   StyleSheet
 } from 'react-native';
 
-import Render from './MyComponentRender';
-import Logic from './MyComponentLogic';
+import Render from './EditProfileRender';
+import Logic from './EditProfileLogic';
 
 let MyInnerComponent = Logic(React,Render());
 
-export default class MyComponent extends Component {
+export default class EditProfile extends Component {
 
   constructor(props) {
     super(props);

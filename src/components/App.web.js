@@ -6,7 +6,7 @@ import React, {
 
 import { connect } from 'react-redux'
 import {bindActionCreators} from 'redux';
-import MainPage from '../components/MainPage/MainPage.web';
+import MainPage from './MainPage/MainPage.web';
 import * as profileActions from '../actions/ProfileActions';
 
 
@@ -18,7 +18,7 @@ class App extends Component {
 
   render(){
     const { profile, actions } = this.props;
-    
+
     return (
       <div className="container">
         <MainPage profile={profile} actions={actions}/>

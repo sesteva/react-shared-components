@@ -9,7 +9,7 @@ import React, {
 } from 'react-native';
 
 import Profile from '../Profile/Profile.native';
-import Input from '../MyComponent/MyComponent.native';
+import Input from '../EditProfile/EditProfile.native';
 
 export default class NativeRender extends Component {
 

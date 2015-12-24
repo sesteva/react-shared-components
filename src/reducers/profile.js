@@ -10,8 +10,8 @@ export default function profile(state = initialState, action = {}) {
       return {
         ...state,
         username: action.username
-      };
+      }
     default:
-      return state;
+      return state
   }
 }

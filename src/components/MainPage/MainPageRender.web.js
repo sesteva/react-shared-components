@@ -1,6 +1,6 @@
 import React from 'react';
 import Profile from '../Profile/Profile.web';
-import Input from '../MyComponent/MyComponent.web';
+import Input from '../EditProfile/EditProfile.web';
 
 
 const Render = ({ profile, actions }) => {

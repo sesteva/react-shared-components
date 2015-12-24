@@ -3,12 +3,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import Render from './MyComponentRender.web';
-import Logic from './MyComponentLogic';
+import Render from './EditProfileRender.web';
+import Logic from './EditProfileLogic';
 
 let MyInnerComponent = Logic(React,Render);
 
-export default class MyComponent extends Component {
+export default class EditProfile extends Component {
 
   constructor(props) {
     super(props);
