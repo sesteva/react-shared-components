@@ -8,8 +8,11 @@ import React, {
   StyleSheet
 } from 'react-native';
 
-import Profile from '../Profile/Profile.native';
-import Input from '../EditProfile/EditProfile.native';
+import Dimensions from 'Dimensions'
+import Profile from '../Profile/Profile.native'
+import Input from '../EditProfile/EditProfile.native'
+
+let { width } = Dimensions.get('window')
 
 export default class NativeRender extends Component {
 
@@ -17,9 +20,7 @@ export default class NativeRender extends Component {
     super(props);
   }
 
-  render() {
-    const { profile, actions } = this.props;
-
+  renderSmartPhoneView(profile, actions){
     return (
       <View style={styles.parent}>
         <View style={styles.topBlock}>
@@ -31,6 +32,27 @@ export default class NativeRender extends Component {
           </View>
           <View style={[styles.cellFive, styles.base]}>
             <Text>Update Profile</Text>
+            <Text> Window width: {width} </Text>
+            <Input onSubmit={actions.updateProfile}/>
+          </View>
+        </View>
+      </View>
+    )
+  }
+
+  renderTabletView(profile, actions) {
+    return (
+      <View style={styles.parent}>
+        <View style={styles.topBlock}>
+          <Profile profile={profile} loadProfile={actions.loadProfile}/>
+        </View>
+        <View style={styles.bottomBlock}>
+          <View style={[styles.cellFour, styles.base]}>
+            <Text style={styles.cellId}>4</Text>
+          </View>
+          <View style={[styles.cellFive, styles.base]}>
+            <Text>Update Profile</Text>
+            <Text> Window width: {width} </Text>
             <Input onSubmit={actions.updateProfile}/>
           </View>
           <View style={styles.bottomRight}>
@@ -42,6 +64,23 @@ export default class NativeRender extends Component {
             </View>
           </View>
         </View>
+      </View>
+    )
+  }
+
+
+  render() {
+    const { profile, actions } = this.props;
+    let responsiveView
+    if(width > 600) {
+      responsiveView = this.renderTabletView(profile, actions)
+    } else {
+      responsiveView = this.renderSmartPhoneView(profile, actions)
+    }
+
+    return (
+      <View style={styles.parent}>
+        {responsiveView}
       </View>
     );
   }
