@@ -8,7 +8,7 @@ import React, {
 import Render from './ProfileRender';
 import Logic from './ProfileLogic';
 
-let MyInnerComponent = Logic(React,Render());
+let MyInnerComponent = Logic(React,Render);
 
 class Profile extends Component {
 
@@ -22,10 +22,6 @@ class Profile extends Component {
     );
   }
 
-}
-
-Profile.propTypes = {
-  profile: PropTypes.object.isRequired
 }
 
 export default Profile;

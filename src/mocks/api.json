@@ -1,0 +1,15 @@
+{
+  "entitiies": {
+    "users":{
+      1 : {
+        "id": 1,
+        "username": "Santiago"
+      },
+      2: {
+        "id": 2,
+        "username": "Pablo"
+      }
+    }
+  }
+
+}

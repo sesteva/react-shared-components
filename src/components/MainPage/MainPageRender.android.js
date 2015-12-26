@@ -2,6 +2,8 @@
 
 import NativeRender from './MainPageRender.native';
 
-export default function () {
-    return NativeRender;
+export default class Render extends NativeRender {
+  constructor(props){
+    super(props)
+  }
 }

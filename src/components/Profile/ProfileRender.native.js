@@ -5,10 +5,11 @@ import React, {
   Text,
   TextInput,
   Component,
+  PropTypes,
   StyleSheet
 } from 'react-native';
 
-export default class NativeRender extends Component {
+class Profile extends Component {
 
   constructor(props) {
     super(props);
@@ -26,12 +27,17 @@ export default class NativeRender extends Component {
           <Text>{profile.username}</Text>
         </View>
         <View style={styles.misc}>
-          <Text>Something Else</Text>
+          <Text>Errors</Text>
+          <Text>{profile.error}</Text>
         </View>
       </View>
     );
   }
 
+}
+
+Profile.propTypes = {
+  profile: PropTypes.object.isRequired
 }
 
 var styles = StyleSheet.create({
@@ -71,3 +77,5 @@ var styles = StyleSheet.create({
     color: 'red',
   },
 });
+
+export default Profile;

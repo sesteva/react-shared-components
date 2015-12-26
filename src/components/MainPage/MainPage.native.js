@@ -8,7 +8,7 @@ import React, {
 import Render from './MainPageRender';
 import Logic from './MainPageLogic';
 
-let MyInnerComponent = Logic(React,Render());
+let MyInnerComponent = Logic(React,Render);
 
 class MainPage extends Component {
 

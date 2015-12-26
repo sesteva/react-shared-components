@@ -8,7 +8,7 @@ const Render = ({ profile, actions }) => {
   return (
     <div style={styles.parent}>
       <div style={styles.topBlock}>
-        <Profile profile={profile}/>
+        <Profile profile={profile} loadProfile={actions.loadProfile}/>
       </div>
       <div style={styles.bottomBlock}>
         <div style={styles.cellFour}>

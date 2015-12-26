@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {
+  PropTypes
+} from 'react';
 
-const Render = ({ profile }) => {
+const Profile = ({ profile }) => {
 
   return (
     <div style={styles.wrapper}>
@@ -11,13 +13,18 @@ const Render = ({ profile }) => {
         <span>{profile.username}</span>
       </div>
       <div style={styles.misc}>
-        <span>Something Else</span>
-      </div>      
+        <span>Errors</span>
+        <span>{profile.error}</span>
+      </div>
     </div>
   );
 };
 
-export default Render;
+Profile.propTypes = {
+  profile: PropTypes.object.isRequired
+}
+
+export default Profile;
 
 var styles = {
   wrapper: {

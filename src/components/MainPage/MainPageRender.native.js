@@ -23,7 +23,7 @@ export default class NativeRender extends Component {
     return (
       <View style={styles.parent}>
         <View style={styles.topBlock}>
-          <Profile profile={profile}/>
+          <Profile profile={profile} loadProfile={actions.loadProfile}/>
         </View>
         <View style={styles.bottomBlock}>
           <View style={[styles.cellFour, styles.base]}>

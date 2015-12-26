@@ -9,7 +9,7 @@ import React, {
 import Render from './EditProfileRender';
 import Logic from './EditProfileLogic';
 
-let MyInnerComponent = Logic(React,Render());
+let MyInnerComponent = Logic(React,Render);
 
 export default class EditProfile extends Component {
 

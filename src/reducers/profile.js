@@ -11,6 +11,16 @@ export default function profile(state = initialState, action = {}) {
         ...state,
         username: action.username
       }
+    case types.LOAD_PROFILE_SUCCESS:
+      return {
+        ...state,
+        username: action.response.username
+      }
+    case types.LOAD_PROFILE_FAILURE:
+      return {
+        ...state,
+        error: action.error.message
+      }
     default:
       return state
   }
