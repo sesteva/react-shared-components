@@ -9,4 +9,6 @@ module.exports = {
       { test: /.js?$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]
   },
+  debug: true,
+  devtool: "source-map",
 };
