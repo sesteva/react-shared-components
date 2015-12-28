@@ -28,6 +28,7 @@ export default Profile;
 
 var styles = {
   wrapper: {
+   backgroundColor: '#fff',
    display: 'flex',
    flexGrow: 1,
    flexDirection: 'row',

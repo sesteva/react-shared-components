@@ -1,7 +1,7 @@
 import React from 'react';
 import Profile from '../Profile/Profile.web';
 import Input from '../EditProfile/EditProfile.web';
-
+import Preferences from '../Preferences/Preferences.web'
 
 const Render = ({ profile, actions }) => {
 
@@ -15,13 +15,11 @@ const Render = ({ profile, actions }) => {
           <span style={styles.cellId}>4</span>
         </div>
         <div style={styles.cellFive}>
-          <div>Update Profile</div>
           <Input onSubmit={actions.updateProfile}/>
-          <span style={styles.cellId}>5</span>
         </div>
         <div style={styles.bottomRight}>
           <div style={styles.cellSix}>
-            <span style={styles.cellId}>6</span>
+            <Preferences />
           </div>
           <div style={styles.cellSeven} >
             <span style={styles.cellId}>7</span>
@@ -76,16 +74,19 @@ let styles = {
   cellFour: {
     flexGrow: 3,
     backgroundColor: '#0000FF',
+    margin: 5
   },
   cellFive: {
-    flexGrow: 6
+    flexGrow: 6,
+    display: 'flex'
   },
   cellSix: {
-    flexGrow: 1,
+    flexGrow: 2,
   },
   cellSeven: {
-    flexGrow: 1,
-    backgroundColor: '#FFFF00'
+    flexGrow: 3,
+    backgroundColor: '#FFFF00',
+    margin: 5
   },
   cellId: {
     textAlign: 'center',

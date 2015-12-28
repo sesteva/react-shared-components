@@ -53,7 +53,8 @@ var styles = StyleSheet.create({
   input: {
     height: 40,
     borderColor: 'gray',
-    borderWidth: 1},
+    borderWidth: 1
+  },
   sync: {},
   error: {
     color: 'red',

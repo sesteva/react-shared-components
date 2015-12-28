@@ -15,7 +15,8 @@ const Render = ({ value, errors, sync, onValueChange, onValueSubmit }) => {
       {sync ? "Synced!" : "Syncing..."}
     </p>);
 
-  return (<div className={status}>
+  return (<div style={styles.container}>
+    <div>Update Profile</div>
     <label>Name : </label>
     <input type="text"
       className="form-control"
@@ -29,3 +30,11 @@ const Render = ({ value, errors, sync, onValueChange, onValueSubmit }) => {
 };
 
 export default Render;
+
+var styles = {
+  container:{    
+    flexGrow: 1,
+    backgroundColor: '#fff',
+    margin: 5,
+  }
+}

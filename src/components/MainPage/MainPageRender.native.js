@@ -11,6 +11,7 @@ import React, {
 import Dimensions from 'Dimensions'
 import Profile from '../Profile/Profile.native'
 import Input from '../EditProfile/EditProfile.native'
+import Preferences from '../Preferences/Preferences.native'
 
 let { width } = Dimensions.get('window')
 
@@ -57,7 +58,7 @@ export default class NativeRender extends Component {
           </View>
           <View style={styles.bottomRight}>
             <View style={[styles.cellSix, styles.base]}>
-              <Text style={styles.cellId}>6</Text>
+              <Preferences />
             </View>
             <View style={[styles.cellSeven, styles.base]} >
               <Text style={styles.cellId}>7</Text>
@@ -97,7 +98,7 @@ var styles = StyleSheet.create({
     bottom: 0
   },
   base: {
-    borderColor: '#000000',
+    borderColor: '#009688',
     borderWidth: 5,
     alignItems: 'center',
     justifyContent: 'center',
@@ -136,10 +137,10 @@ var styles = StyleSheet.create({
     flex: 6
   },
   cellSix: {
-    flex: 1
+    flex: 2,
   },
   cellSeven: {
-    flex: 1,
+    flex: 3,
     backgroundColor: '#FFFF00'
   },
   cellId: {

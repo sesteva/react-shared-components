@@ -20,7 +20,7 @@ class App extends Component {
     const { profile, actions } = this.props;
 
     return (
-      <div className="container">
+      <div style={styles.container}>
         <MainPage profile={profile} actions={actions}/>
       </div>
     )
@@ -48,3 +48,8 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(App)
+
+var styles = {
+  container: {
+  },
+};
