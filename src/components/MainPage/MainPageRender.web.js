@@ -2,6 +2,7 @@ import React from 'react';
 import Profile from '../Profile/Profile.web';
 import Input from '../EditProfile/EditProfile.web';
 import Preferences from '../Preferences/Preferences.web'
+import ActiveTrips from '../ActiveTrips/ActiveTrips.web'
 
 const Render = ({ profile, actions }) => {
 
@@ -12,7 +13,7 @@ const Render = ({ profile, actions }) => {
       </div>
       <div style={styles.bottomBlock}>
         <div style={styles.cellFour}>
-          <span style={styles.cellId}>4</span>
+          <ActiveTrips />
         </div>
         <div style={styles.cellFive}>
           <Input onSubmit={actions.updateProfile}/>
@@ -73,7 +74,7 @@ let styles = {
   },
   cellFour: {
     flexGrow: 3,
-    backgroundColor: '#0000FF',
+    display: 'flex',
     margin: 5
   },
   cellFive: {

@@ -12,6 +12,7 @@ import Dimensions from 'Dimensions'
 import Profile from '../Profile/Profile.native'
 import Input from '../EditProfile/EditProfile.native'
 import Preferences from '../Preferences/Preferences.native'
+import ActiveTrips from '../ActiveTrips/ActiveTrips.native'
 
 let { width } = Dimensions.get('window')
 
@@ -49,7 +50,7 @@ export default class NativeRender extends Component {
         </View>
         <View style={styles.bottomBlock}>
           <View style={[styles.cellFour, styles.base]}>
-            <Text style={styles.cellId}>4</Text>
+            <ActiveTrips />
           </View>
           <View style={[styles.cellFive, styles.base]}>
             <Text>Update Profile</Text>
