@@ -73,6 +73,8 @@ React + WebPack will take index.web.js as entry point for our Web js bundle.
 
 ### Components
 
+In order to create a single component, some boilerplate is required.
+
     - components
       - MyComponent
         - MyComponent.native.js              -----> Until react and react-dom is fully separated
@@ -82,6 +84,17 @@ React + WebPack will take index.web.js as entry point for our Web js bundle.
         - MyComponentRender.ios.js           -----> iOS Specific Render
         - MyComponentRender.native.js        -----> Android/iOS Sahred Render
         - MyComponentRender.web.js           -----> Web Specific Render
+
+To avoid this we have created a yeoman generator for this specific purpose.
+
+The generator was already installed when you executed 'npm install'.
+
+In order to use it,
+
+    cd /src/components
+    yo react-dom-native:component MyComponent
+
+You pass in the component name and it will generate all necessary files and its content.         
 
 #### Concepts:
 
