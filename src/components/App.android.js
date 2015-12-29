@@ -8,14 +8,28 @@ import React, {
   DrawerLayoutAndroid,
   Navigator,
   View,
-  PropTypes
+  PropTypes,
+  BackAndroid
 } from 'react-native';
 
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux/native';
 import ToolbarAndroid from 'ToolbarAndroid';
+import Dimensions from 'Dimensions'
 import MainPage from './MainPage/MainPage.native';
 import * as profileActions from '../actions/ProfileActions';
+import ActiveTrips from './ActiveTrips/ActiveTrips.native'
+
+BackAndroid.addEventListener('hardwareBackPress', () => {
+  if (_navigator.getCurrentRoutes().length === 1) {
+    return false;
+  }
+  _navigator.pop();
+  return true;
+});
+
+let { width } = Dimensions.get('window')
+let _navigator = null;
 
 class App extends Component {
 
@@ -36,19 +50,35 @@ class App extends Component {
   onActionSelected(position) {
     if (position === 0) return this.openDrawer();
     if (position === 1) return this.goToPage({name:'home'});
+    if (position === 2) return this.goToPage({name:'preferences'});
   }
 
-  renderScene(route) {
+  renderScene(route, navigator) {
+    _navigator = navigator;
 
     const { profile, actions } = this.props;
 
     switch (route.name) {
     case 'home':
       return <MainPage profile={profile} actions={actions}/>;
+    case 'preferences':
+      return <View style={styles.modal}><ActiveTrips/></View>
     default:
       console.error('Encountered unexpected route: ' + route.name);
     }
     return <MainPage />;
+  }
+
+  navigationMenu() {
+    let menu = [
+      {title: 'Menu', show: 'never'},
+      {title: 'Home', show: 'never'}
+    ]
+    if(width < 800) {
+      menu.push({title: 'Preferences', show: 'never'})
+      return menu
+    }
+    return menu
   }
 
   render() {
@@ -72,10 +102,7 @@ class App extends Component {
               titleColor="white"
               style={styles.toolbar}
               onActionSelected={this.onActionSelected}
-              actions={[
-                {title: 'Menu', show: 'never'},
-                {title: 'Home', show: 'never'}
-              ]}/>
+              actions={this.navigationMenu()}/>
             <Navigator
              ref={'NAVIGATOR'}
              initialRoute={{name: 'home'}}
@@ -87,6 +114,9 @@ class App extends Component {
 };
 
 var styles = StyleSheet.create({
+  modal: {
+    margin: 80
+  },
   container: {
     flex: 1,
     alignItems: 'stretch',

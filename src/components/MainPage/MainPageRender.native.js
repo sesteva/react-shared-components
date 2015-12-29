@@ -30,7 +30,7 @@ export default class NativeRender extends Component {
         </View>
         <View style={styles.bottomBlock}>
           <View style={[styles.cellFour, styles.base]}>
-            <Text style={styles.cellId}>4</Text>
+            <ActiveTrips />
           </View>
           <View style={[styles.cellFive, styles.base]}>
             <Text>Update Profile</Text>
@@ -74,7 +74,7 @@ export default class NativeRender extends Component {
   render() {
     const { profile, actions } = this.props;
     let responsiveView
-    if(width > 600) {
+    if(width > 800) {
       responsiveView = this.renderTabletView(profile, actions)
     } else {
       responsiveView = this.renderSmartPhoneView(profile, actions)
