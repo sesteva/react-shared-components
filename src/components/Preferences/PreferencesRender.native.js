@@ -91,9 +91,12 @@ var styles = StyleSheet.create({
   lineItem: {
     padding: 5,
     flexDirection: 'row',
+    alignItems: 'center',
+    height: 40
   },
   icon: {
     flex: 1,
+    textAlign: 'center',
   },
   text: {
     flex: 4
@@ -101,7 +104,7 @@ var styles = StyleSheet.create({
   action: {
     flex: 1,
     color: '#009688',
-    fontSize: 11
+    fontSize: 11,
   },
   separator: {
     backgroundColor: '#e9ebeb',

@@ -116,7 +116,7 @@ var styles = StyleSheet.create({
   },
   bottomRight: {
     flexDirection: 'column',
-    flex: 2
+    flex: 3
   },
   cellOne: {
     flex: 1,
@@ -134,13 +134,13 @@ var styles = StyleSheet.create({
     backgroundColor: '#0000FF'
   },
   cellFive: {
-    flex: 6
+    flex: 5
   },
   cellSix: {
-    flex: 2,
+    flex: 1,
   },
   cellSeven: {
-    flex: 3,
+    flex: 1,
     backgroundColor: '#FFFF00'
   },
   cellId: {
