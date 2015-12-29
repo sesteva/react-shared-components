@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node_modules/react-native/packager/packager.sh",
     "start-web": "webpack-dev-server --progress --colors  --content-base web/",
-    "start-android": "react-native run-android"
+    "start-android": "react-native run-android",
+    "android-bundle": "react-native bundle --entry-file src/index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --platform android --dev false"    
   },
   "dependencies": {
     "react": "^0.14.0",

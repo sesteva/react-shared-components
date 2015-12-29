@@ -37,6 +37,11 @@ To run Android, first start an android emulator (or connect your phone with [USB
     react-native run-android
     npm start
 
+To run on a device or emulator without the Dev server, run the following command:
+
+    react-native bundle --entry-file src/index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --platform android --dev false
+    react-native run-android
+
 ## iOS  
 
 To run iOS, open up [`ios/SampleApp.xcodeproj`](ios/SampleApp.xcodeproj) in XCode, and click Run (the big play button).
