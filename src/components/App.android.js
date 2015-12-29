@@ -18,7 +18,7 @@ import ToolbarAndroid from 'ToolbarAndroid';
 import Dimensions from 'Dimensions'
 import MainPage from './MainPage/MainPage.native';
 import * as profileActions from '../actions/ProfileActions';
-import ActiveTrips from './ActiveTrips/ActiveTrips.native'
+import Preferences from './Preferences/Preferences.native'
 
 BackAndroid.addEventListener('hardwareBackPress', () => {
   if (_navigator.getCurrentRoutes().length === 1) {
@@ -62,7 +62,7 @@ class App extends Component {
     case 'home':
       return <MainPage profile={profile} actions={actions}/>;
     case 'preferences':
-      return <View style={styles.modal}><ActiveTrips/></View>
+      return <View style={styles.modal}><Preferences/></View>
     default:
       console.error('Encountered unexpected route: ' + route.name);
     }
