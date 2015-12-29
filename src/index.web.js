@@ -1,16 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-
-import * as reducers from './reducers';
+import configureStore from './stores/configureStore'
 import App from './components/App.web';
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-const reducer = combineReducers(reducers);
-const store = createStoreWithMiddleware(reducer);
+function getInitialState() {
+  // const _initState = {
+  //   auth: new authInitialState,
+  //   device: (new deviceInitialState).set('isMobile',true).set('version',VERSION),
+  //   global: (new globalInitialState),
+  //   profile: new profileInitialState
+  // };
+  const _initState = {}
+  return _initState;
+}
+
+const store = configureStore(getInitialState());
 
 ReactDOM.render(
   <Provider store={store}>

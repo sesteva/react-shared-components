@@ -5,16 +5,23 @@ import React, {
   Component
 } from 'react-native';
 
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { Provider } from 'react-redux/native';
-import thunk from 'redux-thunk';
-
-import * as reducers from './reducers';
+import { Provider } from 'react-redux/native'
+import configureStore from './stores/configureStore'
 import App from './components/App.android.js';
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-const reducer = combineReducers(reducers);
-const store = createStoreWithMiddleware(reducer);
+function getInitialState() {
+  // const _initState = {
+  //   auth: new authInitialState,
+  //   device: (new deviceInitialState).set('isMobile',true).set('version',VERSION),
+  //   global: (new globalInitialState),
+  //   profile: new profileInitialState
+  // };
+  const _initState = {}
+  return _initState;
+}
+
+const store = configureStore(getInitialState());
+
 
 class SampleApp extends Component {
   render() {
