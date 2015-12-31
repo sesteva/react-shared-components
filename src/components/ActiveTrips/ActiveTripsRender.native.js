@@ -19,7 +19,7 @@ class ActiveTrips extends Component {
     return (
       <View style={styles.wrapper}>
         <View style={styles.header}>
-          <Text style={styles.h1}>Title</Text>
+          <Text style={styles.h1}>Active Trips</Text>
         </View>
         <View style={styles.separator}/>
         <View style={styles.body}>

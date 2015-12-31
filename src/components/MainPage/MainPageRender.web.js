@@ -1,4 +1,6 @@
-import React from 'react';
+import React,{
+  PropTypes
+} from 'react';
 import Profile from '../Profile/Profile.web';
 import Input from '../EditProfile/EditProfile.web';
 import Preferences from '../Preferences/Preferences.web'
@@ -30,6 +32,11 @@ const Render = ({ profile, actions }) => {
     </div>
   );
 };
+
+Render.propTypes = {
+  profile: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
+}
 
 let styles = {
   parent: {

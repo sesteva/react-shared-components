@@ -1,8 +1,7 @@
 'use strict';
 
 import React, {
-  Component,
-  PropTypes
+  Component
 } from 'react-native';
 
 import Render from './MainPageRender';
@@ -22,11 +21,6 @@ class MainPage extends Component {
     );
   }
 
-}
-
-MainPage.propTypes = {
-  profile: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
 }
 
 export default MainPage;

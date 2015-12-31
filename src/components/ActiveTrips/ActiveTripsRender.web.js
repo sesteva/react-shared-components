@@ -7,7 +7,7 @@ const ActiveTrips = ({ }) => {
   return (
     <div style={styles.wrapper}>
       <div style={styles.header}>
-        <span style={styles.h1}>Title</span>
+        <span style={styles.h1}>Active Trips</span>
       </div>
       <div style={styles.separator}/>
       <div style={styles.body}>

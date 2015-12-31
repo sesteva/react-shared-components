@@ -7,7 +7,7 @@ export default (React,InnerComponent) => class extends React.Component {
   }
 
   componentDidMount(){
-    // this.props.loadPreferences('60040d87c9ebf803')
+    
   }
 
   render(){

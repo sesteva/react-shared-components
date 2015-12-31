@@ -5,7 +5,8 @@ import React, {
   Text,
   TextInput,
   Component,
-  StyleSheet
+  StyleSheet,
+  PropTypes
 } from 'react-native';
 
 import Dimensions from 'Dimensions'
@@ -87,6 +88,11 @@ export default class NativeRender extends Component {
     );
   }
 
+}
+
+NativeRender.propTypes = {
+  profile: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
 }
 
 var styles = StyleSheet.create({
