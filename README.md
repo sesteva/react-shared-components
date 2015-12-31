@@ -143,3 +143,12 @@ Redux is traditionally followed by separation of Container (logic) and Presentat
 On the web you will find Redux examples including a containers folder.
 
 This project follows the same concept but keeps all parts in the same component folder.
+
+
+### testPathDirs
+
+    npm test
+
+### TDD
+
+    npm run tdd

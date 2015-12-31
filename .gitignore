@@ -34,3 +34,4 @@ android/app/src/main/assets/index.android.bundle
 #
 node_modules/
 npm-debug.log
+coverage
