@@ -84,6 +84,10 @@ In order to create a single component, some boilerplate is required.
         - MyComponentRender.ios.js           -----> iOS Specific Render
         - MyComponentRender.native.js        -----> Android/iOS Sahred Render
         - MyComponentRender.web.js           -----> Web Specific Render
+        - __tests__
+          - MyComponentRender.native.test.js -----> Test Native Render Output
+          - MyComponentRender.web.test.js    -----> Test Web Render Output
+          - MyComponentLogic.test.js         -----> Test Shared Logic
 
 To avoid this we have created a yeoman generator for this specific purpose.
 
@@ -118,7 +122,11 @@ When the separation by React team is completed, we could have just one MyCompone
 
 #### Logic
 
-MyComponentLogic is where the shared logic lives. Both native and web components will use it without any dependency on the DOM or native Views.
+Following Redux concept you will code most of the application logic in Actions and Reducers. These are already shared across all components.
+
+MyComponentLogic is where we could add shared logic specific to a visual aspect of a component.
+For example, execute an action when the component is mounted, cleaning up a visual hint or input.
+Both native and web components will use it without any dependency on the DOM or native Views
 
 #### Render
 
