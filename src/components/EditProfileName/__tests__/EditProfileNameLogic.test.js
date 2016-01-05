@@ -2,17 +2,17 @@
 
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
-const EditProfile = require.requireActual('../EditProfileLogic');
+const EditProfileName = require.requireActual('../EditProfileNameLogic');
 
 class Render extends React.Component {
     render() { return false; }
 }
 
-describe('EditProfile', function () {
+describe('EditProfileName', function () {
   let Component;
 
   beforeEach(function(){
-    Component = EditProfile(React,Render);
+    Component = EditProfileName(React,Render);
   })
 
   it('should create a component with default state', function(){

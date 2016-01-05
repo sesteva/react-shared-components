@@ -1,4 +1,4 @@
-'use string';
+'use strict';
 const React = require('react');
 const ReactNative = React;
 

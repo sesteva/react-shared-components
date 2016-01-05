@@ -2,28 +2,30 @@ import React, {
   PropTypes
 } from 'react';
 
-const ActiveTrips = ({ }) => {
+import Input from '../EditProfileName/EditProfileName.web'
+
+const UpdateProfile = ({ actions }) => {
 
   return (
     <div style={styles.wrapper}>
       <div style={styles.header}>
-        <span style={styles.h1}>Active Trips</span>
+        <span style={styles.h1}>Update Profile</span>
       </div>
       <div style={styles.separator}/>
       <div style={styles.body}>
         <div style={styles.lineItem}>
-          <span style={styles.text}>Some text</span>
-          <span style={styles.action}>Some Action</span>
+          <Input onSubmit={actions.updateProfile}/>
         </div>
-        <div style={styles.separator}/>
       </div>
     </div>
   );
 };
 
-ActiveTrips.propTypes = {}
+UpdateProfile.propTypes = {
+  actions: PropTypes.object.isRequired
+}
 
-export default ActiveTrips;
+export default UpdateProfile;
 
 var styles = {
   wrapper: {
@@ -37,7 +39,6 @@ var styles = {
   header: {
     flexGrow: 1,
     backgroundColor: '#FFF',
-    alignItems: 'center',
     paddingTop: 10,
   },
   h1: {

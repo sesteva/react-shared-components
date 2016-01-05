@@ -2,11 +2,11 @@ import React,{
   PropTypes
 } from 'react';
 import Profile from '../Profile/Profile.web';
-import Input from '../EditProfile/EditProfile.web';
+import UpdateProfile from '../UpdateProfile/UpdateProfile.web'
 import Preferences from '../Preferences/Preferences.web'
 import ActiveTrips from '../ActiveTrips/ActiveTrips.web'
 
-const Render = ({ profile, actions }) => {
+const MainPage = ({ profile, actions }) => {
 
   return (
     <div style={styles.parent}>
@@ -18,7 +18,7 @@ const Render = ({ profile, actions }) => {
           <ActiveTrips />
         </div>
         <div style={styles.cellFive}>
-          <Input onSubmit={actions.updateProfile}/>
+          <UpdateProfile actions={actions}/>
         </div>
         <div style={styles.bottomRight}>
           <div style={styles.cellSix}>
@@ -33,7 +33,7 @@ const Render = ({ profile, actions }) => {
   );
 };
 
-Render.propTypes = {
+MainPage.propTypes = {
   profile: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 }
@@ -86,7 +86,10 @@ let styles = {
   },
   cellFive: {
     flexGrow: 6,
-    display: 'flex'
+    display: 'flex',
+    marginTop: 5,
+    maringLeft:0,
+    marginRight: 0
   },
   cellSix: {
     flexGrow: 2,
@@ -106,4 +109,4 @@ let styles = {
   }
 };
 
-export default Render;
+export default MainPage;

@@ -5,13 +5,13 @@ import React, {
 } from 'react-native'
 import shallowHelpers  from 'react-shallow-renderer-helpers'
 jest.setMock('react-native-vector-icons/FontAwesome', 'Icon')
-const EditProfile = require.requireActual('../EditProfileRender.native');
+const EditProfileName = require.requireActual('../EditProfileNameRender.native');
 const shallowRenderer = shallowHelpers.createRenderer();
 
-describe('EditProfile', function() {
+describe('EditProfileName', function() {
 
   const renderComponent = (props)=> {
-    shallowRenderer.render(() => <EditProfile {...props}/>);
+    shallowRenderer.render(() => <EditProfileName {...props}/>);
     return shallowRenderer.getRenderOutput();
   }
 

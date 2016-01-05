@@ -1,13 +1,13 @@
 
 import React from 'react'
 import shallowHelpers  from 'react-shallow-renderer-helpers'
-const EditProfile = require.requireActual('../EditProfileRender.web');
+const EditProfileName = require.requireActual('../EditProfileNameRender.web');
 const shallowRenderer = shallowHelpers.createRenderer();
 
-describe('EditProfile', function() {
+describe('EditProfileName', function() {
 
   const renderComponent = (props)=> {
-    shallowRenderer.render(() => <EditProfile {...props}/>);
+    shallowRenderer.render(() => <EditProfileName {...props}/>);
     return shallowRenderer.getRenderOutput();
   }
 
@@ -21,7 +21,7 @@ describe('EditProfile', function() {
     }
     let output = renderComponent(props);
     expect(output.type).toBe('div');
-    expect(output).toContainReactNodeInTreeLike(<div>Update Profile</div>);
+    expect(output).toContainReactNodeInTreeLike(<label>Name</label>);
   });
 
 });

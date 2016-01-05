@@ -6,10 +6,11 @@ import React, {
   TextInput,
   Component,
   StyleSheet,
-  TouchableHighlight
+  TouchableHighlight,
+  PropTypes
 } from 'react-native';
 
-export default class NativeRender extends Component {
+class EditProfileName extends Component {
 
   constructor(props) {
     super(props);
@@ -42,6 +43,14 @@ export default class NativeRender extends Component {
 
 }
 
+EditProfileName.propTypes = {
+  value: PropTypes.string.isRequired,
+  errors: PropTypes.array.isRequired,
+  sync: PropTypes.bool.isRequired,
+  onValueChange: PropTypes.func.isRequired,
+  onValueSubmit: PropTypes.func.isRequired
+}
+
 var styles = StyleSheet.create({
   wrapper: {
     borderWidth: 1,
@@ -60,3 +69,5 @@ var styles = StyleSheet.create({
     color: 'red',
   },
 });
+
+export default EditProfileName;

@@ -11,13 +11,13 @@ import React, {
 
 import Dimensions from 'Dimensions'
 import Profile from '../Profile/Profile.native'
-import Input from '../EditProfile/EditProfile.native'
+import UpdateProfile from '../UpdateProfile/UpdateProfile.native'
 import Preferences from '../Preferences/Preferences.native'
 import ActiveTrips from '../ActiveTrips/ActiveTrips.native'
 
 let { width } = Dimensions.get('window')
 
-export default class NativeRender extends Component {
+class MainPage extends Component {
 
   constructor(props) {
     super(props);
@@ -34,9 +34,7 @@ export default class NativeRender extends Component {
             <ActiveTrips />
           </View>
           <View style={[styles.cellFive, styles.base]}>
-            <Text>Update Profile</Text>
-            <Text> Window width: {width} </Text>
-            <Input onSubmit={actions.updateProfile}/>
+            <UpdateProfile actions={actions}/>
           </View>
         </View>
       </View>
@@ -54,16 +52,15 @@ export default class NativeRender extends Component {
             <ActiveTrips />
           </View>
           <View style={[styles.cellFive, styles.base]}>
-            <Text>Update Profile</Text>
-            <Text> Window width: {width} </Text>
-            <Input onSubmit={actions.updateProfile}/>
+            <UpdateProfile actions={actions}/>
           </View>
           <View style={styles.bottomRight}>
             <View style={[styles.cellSix, styles.base]}>
               <Preferences />
             </View>
             <View style={[styles.cellSeven, styles.base]} >
-              <Text style={styles.cellId}>7</Text>
+              <Text style={styles.cellId}>Debug Info:</Text>
+              <Text> Window width: {width} </Text>
             </View>
           </View>
         </View>
@@ -90,7 +87,7 @@ export default class NativeRender extends Component {
 
 }
 
-NativeRender.propTypes = {
+MainPage.propTypes = {
   profile: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 }
@@ -106,7 +103,7 @@ var styles = StyleSheet.create({
   },
   base: {
     borderColor: '#009688',
-    borderWidth: 5,
+    borderWidth: 4,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -155,3 +152,5 @@ var styles = StyleSheet.create({
     fontSize: 24,
   }
 });
+
+export default MainPage;
