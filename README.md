@@ -153,10 +153,10 @@ On the web you will find Redux examples including a containers folder.
 This project follows the same concept but keeps all parts in the same component folder.
 
 
-### testPathDirs
+### Run Tests
 
     npm test
 
-### TDD
+### Run Tests Continously (TDD's way)
 
     npm run tdd
