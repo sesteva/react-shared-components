@@ -28,6 +28,9 @@ const MainPage = ({ profile, actions }) => {
             <span style={styles.cellId}>7</span>
           </div>
         </div>
+        <div style={styles.cellEight}>
+          <span style={styles.cellId}>8</span>
+        </div>
       </div>
     </div>
   );
@@ -80,12 +83,12 @@ let styles = {
     flexGrow: 5
   },
   cellFour: {
-    flexGrow: 3,
+    flexGrow: 2,
     display: 'flex',
     margin: 5
   },
   cellFive: {
-    flexGrow: 6,
+    flexGrow: 2,
     display: 'flex',
     marginTop: 5,
     maringLeft:0,
@@ -96,8 +99,15 @@ let styles = {
   },
   cellSeven: {
     flexGrow: 3,
+    backgroundColor: '#FF0000',
+    marginRight: 5,
+    marginLeft: 5
+  },
+  cellEight: {
+    flexGrow: 3,
     backgroundColor: '#FFFF00',
-    margin: 5
+    marginTop: 5,
+    marginRight: 5
   },
   cellId: {
     textAlign: 'center',
